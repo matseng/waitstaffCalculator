@@ -1,10 +1,50 @@
-<html ng-app='MyApp'>
+<!-- python -m SimpleHTTPServer 8080 -->
+<html ng-app='WaitstaffCalculator'>
 <head>
-  <title>MyApp</title>
+  <title>Waitstaff Calculator</title>
   <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
+  <div ng-controller='WaitstaffCalculatorController'>
+    <h1>Waitstaff Calculator</h1>
+    
+    <div class='box mealDetails'>
+      <h3>Enter Meal Details</h3>
+      <form>
+        <label>Base Meal Price: $
+          <input ng-model='mealDetails.basePrice' placeholder='e.g. 9.99'>
+        </label> <br>
+        <label>Tax Rate: %
+          <input ng-model='mealDetails.taxRate' placeholder='e.g. 8.75'>
+        </label> <br>
+        <label>Tip Percentage
+          <input ng-model='mealDetails.tipPercentage' placeholder='e.g. 18'>
+        </label> <br>
+        <button ng-click='submitClicked()'>Submit</button>
+        <button ng-click='cancelClicked()'>Cancel</button>
+      </form>
+    </div>
+
+    <div class='box customerCharges'>
+      <h3>Customer Charges</h3>
+      <div>Subtotal: {{customerCharges.subTotal}}</div>
+      <div>Tip: {{customerCharges.tip}}</div>
+      <div>TOTAL: {{customerCharges.total}}</div>
+    </div>
+    
+    <div class='box earningsInfo'>
+      <h3>My Earnings Info</h3>
+      <div>Tip Total: {{earningsInfo.tipTotal}}</div>
+      <div>Meal Count: {{earningsInfo.mealCount}}</div>
+      <div>Average Tip Per Meal: {{earningsInfo.averageTip}}</div>
+    </div>
+
+    <div class='resetButton'>
+      <button>Reset</button>
+    </div>
+
+  </div>
   <script src='bower_components/angular/angular.js'></script>
 <script src='src/app.js'></script>
 </body>

@@ -1,61 +1,20 @@
-* {
-  /*border-style: dotted;*/
-  /*border-width: 2px;*/
+.box {
+  border: 1px solid black;
 }
 
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+/*.enterMealDetails {
+  float: left;
 }
 
-.show-border {
-  border: 1px solid;
+.customerCharges {
+  float: right;
 }
 
-.header {
-  margin-left: 0;
-  margin-right: 0;
+.myEarningsInfo {
+  float: right;
 }
 
-.vcenter {
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-}
+.resetButton {
+  float: right;
+}*/
 
-fieldset {
-  /*text-align: center;*/
-  padding-left: 15px;
-  margin-bottom: 5px;
-}
-
-.provideWords {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.submitMadLib {
-  text-align: center;
-  padding-bottom: 15px;
-}
-
-.resetMadLib {
-  text-align: center;
-  padding-bottom: 15px;
-}
-
-.paragraphContainer {
-  padding-top: 15px;
-}
-
-.paragraphContainer p span {
-  font-weight: bold;
-}
-
-.paragraphContainer .placeholder {
-  color: gray;
-  font-weight: normal;
-  /*text-decoration:underline;*/
-}
