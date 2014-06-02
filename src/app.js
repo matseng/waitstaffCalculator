@@ -1,3 +1,12 @@
+/*
+* TODO:
+  - validate form fields for numbers as input
+  - display numbers using angular filters
+  - bootstrap column layout
+  - use tables for layout of labels and numbers (e.g. percetages, amounts, etc)
+  - push to gh-pages
+*/
+
 angular.module('WaitstaffCalculator', []);
 
 angular.module('WaitstaffCalculator')
