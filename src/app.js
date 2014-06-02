@@ -3,10 +3,14 @@ angular.module('WaitstaffCalculator', []);
 angular.module('WaitstaffCalculator')
   .controller('WaitstaffCalculatorController', ['$scope', function($scope) {
     
-    $scope.customerCharges = {};
-    $scope.earningsInfo = {};
-    $scope.earningsInfo.tipTotal = 0;
-    $scope.earningsInfo.mealCount = 0;
+    function intialize() {
+      $scope.mealDetails = {};
+      $scope.customerCharges = {};
+      $scope.earningsInfo = {};
+      $scope.earningsInfo.tipTotal = 0;
+      $scope.earningsInfo.mealCount = 0;
+    }
+    intialize();
 
     $scope.submitClicked = function() {
       console.log($scope.mealDetails.basePrice);
@@ -17,6 +21,16 @@ angular.module('WaitstaffCalculator')
       $scope.earningsInfo.tipTotal = $scope.earningsInfo.tipTotal + $scope.customerCharges.tip;
       $scope.earningsInfo.mealCount += 1;
       $scope.earningsInfo.averageTip = $scope.earningsInfo.tipTotal / $scope.earningsInfo.mealCount;
+      $scope.mealDetails = {};
+    };
+
+    $scope.cancelClicked = function() {
+      $scope.mealDetails = {};
+      $scope.customerCharges = {};
+    };
+
+    $scope.resetClicked = function() {
+      intialize();
     };
 
   }]);
