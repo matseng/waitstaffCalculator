@@ -46,19 +46,19 @@
           <h3 class='text-center'>Customer Charges</h3>
           <table>
             <tr>
-              <td>Subtotal:</td>
+              <td>Subtotal: $</td>
               <td ng-if='!customerCharges.subTotal'>-</td>
-              <td ng-if='customerCharges.subTotal'>{{customerCharges.subTotal}}</td>
+              <td ng-if='customerCharges.subTotal'>{{customerCharges.subTotal | number:2}}</td>
             </tr>
             <tr>
-              <td>Tip:</td>
+              <td>Tip: $</td>
               <td ng-if='!customerCharges.tip'>-</td>
-              <td ng-if='customerCharges.tip'>{{customerCharges.tip}}</td>
+              <td ng-if='customerCharges.tip'>{{customerCharges.tip| number:2}}</td>
             </tr>
             <tr>
-              <td>TOTAL: </td>
+              <td>TOTAL: $</td>
               <td ng-if='!customerCharges.total'>-</td>
-              <td ng-if='customerCharges.total'>{{customerCharges.total}}</td>
+              <td ng-if='customerCharges.total'>{{customerCharges.total | number:2}}</td>
             </tr>
           </table>
         </div>
@@ -66,15 +66,15 @@
           <h3 class='text-center'>My Earnings Info</h3>
           <table>
             <tr>
-              <td>Tip Total:</td>
-              <td>{{earningsInfo.tipTotal}}</td>
+              <td>Tip Total: $</td>
+              <td>{{earningsInfo.tipTotal | number:2}}</td>
             </tr>
             <tr>
               <td>Meal Count:</td>
               <td>{{earningsInfo.mealCount}}</td>
             </tr>
-              <td>Average Tip Per Meal:</td>
-              <td>{{earningsInfo.averageTip}}</td>
+              <td>Average Tip Per Meal: $</td>
+              <td>{{earningsInfo.averageTip | number:2}}</td>
             <tr></tr>
           </table>
         </div>
