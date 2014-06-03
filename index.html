@@ -37,7 +37,7 @@
           <button ng-click='submitClicked()'>Submit</button>
           <button ng-click='cancelClicked()'>Cancel</button>
           <br>
-          <p ng-if='form.submitAttempted && form.$error.required'>Please enter numbers each field</p>
+          <p ng-if='form.submitAttempted && form.$error.required'>Please enter numbers in each field</p>
         </form>
       </div>
 
@@ -55,7 +55,7 @@
               <td ng-if='!customerCharges.tip'>-</td>
               <td ng-if='customerCharges.tip'>{{customerCharges.tip| number:2}}</td>
             </tr>
-            <tr>
+            <tr class='total'>
               <td>TOTAL: $</td>
               <td ng-if='!customerCharges.total'>-</td>
               <td ng-if='customerCharges.total'>{{customerCharges.total | number:2}}</td>

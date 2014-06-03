@@ -23,7 +23,7 @@ table {
 }
 
 table, td {
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
 td:first-child {
@@ -34,13 +34,14 @@ td {
   padding: 5px;
 }
 
-/*.customerCharges {
-  float: right;
+.total {
+  border-top: 1px solid gray;
 }
+
 
 .myEarningsInfo {
   float: right;
-}*/
+}
 
 .resetButton {
   float: right;
