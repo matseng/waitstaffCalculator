@@ -13,31 +13,31 @@
 
       <div class='box col-sm-offset-1 col-sm-5 text-center'>
         <h3 class='expand-margin'>Enter Meal Details</h3>
-        <form>
+        <form name='form' novalidate>
           <table>
             <tr>
+              <td>Base Meal Price: $</td>
               <td>
-                Base Meal Price: $
-              </td>
-              <td>
-                <input ng-model='mealDetails.basePrice' placeholder='9.99'>
+                <input type='number' name='basePrice' ng-model='mealDetails.basePrice' placeholder='9.99' required>
               </td>
             </tr>
             <tr>
               <td>Tax Rate: %</td>
               <td>
-                <input ng-model='mealDetails.taxRate' placeholder='8.75'>
+                <input type='number' name='taxRate' ng-model='mealDetails.taxRate' placeholder='8.75' required>
               </td>
             </tr>
             <tr>
               <td>Tip Percentage: %</td>
               <td>
-                <input ng-model='mealDetails.tipPercentage' placeholder='18'>
+                <input type='number' name='tipPercentage' ng-model='mealDetails.tipPercentage' placeholder='18' required>
               </td>
             </tr>
           </table>
           <button ng-click='submitClicked()'>Submit</button>
           <button ng-click='cancelClicked()'>Cancel</button>
+          <br>
+          <p ng-if='form.submitAttempted && form.$error.required'>Please enter numbers each field</p>
         </form>
       </div>
 

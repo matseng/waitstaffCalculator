@@ -23,15 +23,17 @@ angular.module('WaitstaffCalculator')
     intialize();
 
     $scope.submitClicked = function() {
-      console.log($scope.mealDetails.basePrice);
-      $scope.customerCharges.subTotal = $scope.mealDetails.basePrice * (1 + $scope.mealDetails.taxRate / 100);
-      $scope.customerCharges.tip = $scope.mealDetails.basePrice * ($scope.mealDetails.tipPercentage / 100);
-      $scope.customerCharges.total = $scope.customerCharges.subTotal + $scope.customerCharges.tip;
+      $scope.form.submitAttempted = true;
+      if($scope.form.$valid) {
+        $scope.customerCharges.subTotal = $scope.mealDetails.basePrice * (1 + $scope.mealDetails.taxRate / 100);
+        $scope.customerCharges.tip = $scope.mealDetails.basePrice * ($scope.mealDetails.tipPercentage / 100);
+        $scope.customerCharges.total = $scope.customerCharges.subTotal + $scope.customerCharges.tip;
 
-      $scope.earningsInfo.tipTotal = $scope.earningsInfo.tipTotal + $scope.customerCharges.tip;
-      $scope.earningsInfo.mealCount += 1;
-      $scope.earningsInfo.averageTip = $scope.earningsInfo.tipTotal / $scope.earningsInfo.mealCount;
-      $scope.mealDetails = {};
+        $scope.earningsInfo.tipTotal = $scope.earningsInfo.tipTotal + $scope.customerCharges.tip;
+        $scope.earningsInfo.mealCount += 1;
+        $scope.earningsInfo.averageTip = $scope.earningsInfo.tipTotal / $scope.earningsInfo.mealCount;
+        $scope.mealDetails = {};
+      }
     };
 
     $scope.cancelClicked = function() {
