@@ -7,35 +7,35 @@
 </head>
 <body>
   <div ng-controller='WaitstaffCalculatorController'>
-    <h1>Waitstaff Calculator</h1>
+    <h1 class='text-center'>Waitstaff Calculator</h1>
     
-    <div class='row box'>
+    <div class='row'>
 
-      <div class='mealDetails box col-sm-offset-1 col-sm-5'>
-        <h3>Enter Meal Details</h3>
+      <div class='box col-sm-offset-1 col-sm-5 text-center'>
+        <h3 class='expand-margin'>Enter Meal Details</h3>
         <form>
           <table>
             <tr>
-              <td class='tableCol1'>
+              <td>
                 Base Meal Price: $
               </td>
               <td>
-                <input ng-model='mealDetails.basePrice' placeholder='e.g. 9.99'>
+                <input ng-model='mealDetails.basePrice' placeholder='9.99'>
               </td>
             </tr>
             <tr>
-              <td class='tableCol1'>Tax Rate: %</td>
+              <td>Tax Rate: %</td>
               <td>
-                <input ng-model='mealDetails.taxRate' placeholder='e.g. 8.75'>
+                <input ng-model='mealDetails.taxRate' placeholder='8.75'>
               </td>
             </tr>
             <tr>
-              <td class='tableCol1'>Tip Percentage: %</td>
+              <td>Tip Percentage: %</td>
               <td>
-                <input ng-model='mealDetails.tipPercentage' placeholder='e.g. 18'>
+                <input ng-model='mealDetails.tipPercentage' placeholder='18'>
               </td>
             </tr>
-          </table> <br>
+          </table>
           <button ng-click='submitClicked()'>Submit</button>
           <button ng-click='cancelClicked()'>Cancel</button>
         </form>
@@ -43,16 +43,40 @@
 
       <div class='col-sm-5'>
         <div class='box customerCharges'>
-          <h3>Customer Charges</h3>
-          <div>Subtotal: {{customerCharges.subTotal}}</div>
-          <div>Tip: {{customerCharges.tip}}</div>
-          <div>TOTAL: {{customerCharges.total}}</div>
+          <h3 class='text-center'>Customer Charges</h3>
+          <table>
+            <tr>
+              <td>Subtotal:</td>
+              <td ng-if='!customerCharges.subTotal'>-</td>
+              <td ng-if='customerCharges.subTotal'>{{customerCharges.subTotal}}</td>
+            </tr>
+            <tr>
+              <td>Tip:</td>
+              <td ng-if='!customerCharges.tip'>-</td>
+              <td ng-if='customerCharges.tip'>{{customerCharges.tip}}</td>
+            </tr>
+            <tr>
+              <td>TOTAL: </td>
+              <td ng-if='!customerCharges.total'>-</td>
+              <td ng-if='customerCharges.total'>{{customerCharges.total}}</td>
+            </tr>
+          </table>
         </div>
         <div class='box earningsInfo'>
-          <h3>My Earnings Info</h3>
-          <div>Tip Total: {{earningsInfo.tipTotal}}</div>
-          <div>Meal Count: {{earningsInfo.mealCount}}</div>
-          <div>Average Tip Per Meal: {{earningsInfo.averageTip}}</div>
+          <h3 class='text-center'>My Earnings Info</h3>
+          <table>
+            <tr>
+              <td>Tip Total:</td>
+              <td>{{earningsInfo.tipTotal}}</td>
+            </tr>
+            <tr>
+              <td>Meal Count:</td>
+              <td>{{earningsInfo.mealCount}}</td>
+            </tr>
+              <td>Average Tip Per Meal:</td>
+              <td>{{earningsInfo.averageTip}}</td>
+            <tr></tr>
+          </table>
         </div>
         <div class='resetButton'>
           <button ng-click='resetClicked()'>Reset</button>

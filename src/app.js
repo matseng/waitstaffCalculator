@@ -18,6 +18,7 @@ angular.module('WaitstaffCalculator')
       $scope.earningsInfo = {};
       $scope.earningsInfo.tipTotal = 0;
       $scope.earningsInfo.mealCount = 0;
+      $scope.earningsInfo.averageTip = 0;
     }
     intialize();
 
