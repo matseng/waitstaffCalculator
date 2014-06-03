@@ -11,7 +11,7 @@
     
     <div class='row box'>
 
-      <div class='mealDetails box col-sm-6'>
+      <div class='mealDetails box col-sm-offset-1 col-sm-5'>
         <h3>Enter Meal Details</h3>
         <form>
           <table>
@@ -35,13 +35,13 @@
                 <input ng-model='mealDetails.tipPercentage' placeholder='e.g. 18'>
               </td>
             </tr>
-          </table>
+          </table> <br>
           <button ng-click='submitClicked()'>Submit</button>
           <button ng-click='cancelClicked()'>Cancel</button>
         </form>
       </div>
 
-      <div class='col-sm-6'>
+      <div class='col-sm-5'>
         <div class='box customerCharges'>
           <h3>Customer Charges</h3>
           <div>Subtotal: {{customerCharges.subTotal}}</div>
