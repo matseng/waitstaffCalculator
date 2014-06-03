@@ -14,15 +14,28 @@
       <div class='mealDetails box col-sm-6'>
         <h3>Enter Meal Details</h3>
         <form>
-          <label>Base Meal Price: $
-            <input ng-model='mealDetails.basePrice' placeholder='e.g. 9.99'>
-          </label> <br>
-          <label>Tax Rate: %
-            <input ng-model='mealDetails.taxRate' placeholder='e.g. 8.75'>
-          </label> <br>
-          <label>Tip Percentage: %
-            <input ng-model='mealDetails.tipPercentage' placeholder='e.g. 18'>
-          </label> <br>
+          <table>
+            <tr>
+              <td class='tableCol1'>
+                Base Meal Price: $
+              </td>
+              <td>
+                <input ng-model='mealDetails.basePrice' placeholder='e.g. 9.99'>
+              </td>
+            </tr>
+            <tr>
+              <td class='tableCol1'>Tax Rate: %</td>
+              <td>
+                <input ng-model='mealDetails.taxRate' placeholder='e.g. 8.75'>
+              </td>
+            </tr>
+            <tr>
+              <td class='tableCol1'>Tip Percentage: %</td>
+              <td>
+                <input ng-model='mealDetails.tipPercentage' placeholder='e.g. 18'>
+              </td>
+            </tr>
+          </table>
           <button ng-click='submitClicked()'>Submit</button>
           <button ng-click='cancelClicked()'>Cancel</button>
         </form>
