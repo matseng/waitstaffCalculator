@@ -10,7 +10,7 @@
 angular.module('WaitstaffCalculator', []);
 
 angular.module('WaitstaffCalculator')
-  .controller('WaitstaffCalculatorController', ['$scope', function($scope) {
+  .controller('WaitstaffCalculatorController', ['$scope', 'ngRoute' function($scope, ngRoute) {
     
     function intialize() {
       $scope.mealDetails = {};
