@@ -7,10 +7,33 @@
   - push to gh-pages
 */
 
-angular.module('WaitstaffCalculator', []);
+angular.module('WaitstaffCalculator', ['ngRoute']);
 
 angular.module('WaitstaffCalculator')
-  .controller('WaitstaffCalculatorController', ['$scope', 'ngRoute' function($scope, ngRoute) {
+  .config(function($routeProvider) {
+      $routeProvider
+      .when('/', {
+          templateUrl : './../partials/home.html',
+          controller : 'WaitstaffCalculatorController'
+      })
+      .when('/newMeal', {
+          templateUrl : './../partials/newMeal.html',
+          controller : 'WaitstaffCalculatorController'
+      })
+      .when('/myEarnings', {
+        templateUrl : './../partials/myEarnings.html',
+        controller : 'WaitstaffCalculatorController'
+      })
+      .when('/error', {
+        template : '<p>Error Page Not Found</p>'
+      })
+      .otherwise({
+        redirectTo : '/error'
+      })
+  })
+
+angular.module('WaitstaffCalculator')
+  .controller('WaitstaffCalculatorController', ['$scope', function($scope) {
     
     function intialize() {
       $scope.mealDetails = {};
@@ -32,6 +55,7 @@ angular.module('WaitstaffCalculator')
         $scope.earningsInfo.tipTotal = $scope.earningsInfo.tipTotal + $scope.customerCharges.tip;
         $scope.earningsInfo.mealCount += 1;
         $scope.earningsInfo.averageTip = $scope.earningsInfo.tipTotal / $scope.earningsInfo.mealCount;
+        
         $scope.mealDetails = {};
       }
     };

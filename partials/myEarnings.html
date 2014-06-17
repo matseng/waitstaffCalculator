@@ -1,0 +1,19 @@
+<div class='box earningsInfo'>
+  <h3 class='text-center'>My Earnings Info</h3>
+  <table>
+    <tr>
+      <td>Tip Total: $</td>
+      <td>{{earningsInfo.tipTotal | number:2}}</td>
+    </tr>
+    <tr>
+      <td>Meal Count:</td>
+      <td>{{earningsInfo.mealCount}}</td>
+    </tr>
+      <td>Average Tip Per Meal: $</td>
+      <td>{{earningsInfo.averageTip | number:2}}</td>
+    <tr></tr>
+  </table>
+</div>
+<div class='resetButton'>
+  <button ng-click='resetClicked()'>Reset</button>
+</div>  

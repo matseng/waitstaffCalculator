@@ -8,82 +8,23 @@
 <body>
   <div ng-controller='WaitstaffCalculatorController'>
     <h1 class='text-center'>Waitstaff Calculator</h1>
-    
-    <div class='row'>
-
+    <a href="#/">Home</a>
+    <a href="#/newMeal">New Meal</a>
+    <a href="#/myEarnings">My Earnings</a>
+    <div ng-view></div>
+<!--     <div class='row'>
       <div class='box col-sm-offset-1 col-sm-5 text-center'>
-        <h3 class='expand-margin'>Enter Meal Details</h3>
-        <form name='form' novalidate>
-          <table>
-            <tr>
-              <td>Base Meal Price: $</td>
-              <td>
-                <input type='number' name='basePrice' ng-model='mealDetails.basePrice' placeholder='9.99' required>
-              </td>
-            </tr>
-            <tr>
-              <td>Tax Rate: %</td>
-              <td>
-                <input type='number' name='taxRate' ng-model='mealDetails.taxRate' placeholder='8.75' required>
-              </td>
-            </tr>
-            <tr>
-              <td>Tip Percentage: %</td>
-              <td>
-                <input type='number' name='tipPercentage' ng-model='mealDetails.tipPercentage' placeholder='18' required>
-              </td>
-            </tr>
-          </table>
-          <button ng-click='submitClicked()'>Submit</button>
-          <button ng-click='cancelClicked()'>Cancel</button>
-          <br>
-          <p ng-if='form.submitAttempted && form.$error.required'>Please enter numbers in each field</p>
-        </form>
+
       </div>
 
       <div class='col-sm-5'>
         <div class='box customerCharges'>
-          <h3 class='text-center'>Customer Charges</h3>
-          <table>
-            <tr>
-              <td>Subtotal: $</td>
-              <td ng-if='!customerCharges.subTotal'>-</td>
-              <td ng-if='customerCharges.subTotal'>{{customerCharges.subTotal | number:2}}</td>
-            </tr>
-            <tr>
-              <td>Tip: $</td>
-              <td ng-if='!customerCharges.tip'>-</td>
-              <td ng-if='customerCharges.tip'>{{customerCharges.tip| number:2}}</td>
-            </tr>
-            <tr class='total'>
-              <td>TOTAL: $</td>
-              <td ng-if='!customerCharges.total'>-</td>
-              <td ng-if='customerCharges.total'>{{customerCharges.total | number:2}}</td>
-            </tr>
-          </table>
+
         </div>
-        <div class='box earningsInfo'>
-          <h3 class='text-center'>My Earnings Info</h3>
-          <table>
-            <tr>
-              <td>Tip Total: $</td>
-              <td>{{earningsInfo.tipTotal | number:2}}</td>
-            </tr>
-            <tr>
-              <td>Meal Count:</td>
-              <td>{{earningsInfo.mealCount}}</td>
-            </tr>
-              <td>Average Tip Per Meal: $</td>
-              <td>{{earningsInfo.averageTip | number:2}}</td>
-            <tr></tr>
-          </table>
-        </div>
-        <div class='resetButton'>
-          <button ng-click='resetClicked()'>Reset</button>
-        </div>
+
       </div>
 
-    </div>
+    </div> -->
 
   </div>
   <script src='bower_components/angular/angular.js'></script>

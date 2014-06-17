@@ -11,4 +11,5 @@ README.md
 # bower install angular-route -S
 # edit .gitignore file to include angular-route.js
 # add angular-route.js to index.html
+# add <div ng-view></div>
 # inject ngRoute into app.js
